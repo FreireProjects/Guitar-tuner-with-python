@@ -70,9 +70,6 @@ def capitacao():
     # Compute the FFT of the audio signal filter
             fft_data = np.fft.fft(audio_filtro)
             fft_data_f  = np.where(fft_data > THRESHOLD, fft_data, 0)
-    # FFT signal used as value to plot the graph 2
-            fft_data2 = np.abs(fft_data_f)
-            filtered_data = np.where(fft_data2 > THRESHOLD, fft_data_f, 0)
     # Compute the frequencies corresponding to the FFT bins
             freqs = np.fft.fftfreq(len(fft_data_f), 1.0 / RATE)
     # Find the index of the maximum amplitude in the FFT data
