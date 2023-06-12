@@ -71,9 +71,6 @@ def capitacao():
     # Calculando a FFT no sinal filtrado
             fft_data = np.fft.fft(audio_filtro)
             fft_data_f  = np.where(fft_data > THRESHOLD, fft_data, 0)
-    # Variavel com a FFT do sinal para plotar no gráfico 2
-            fft_data2 = np.abs(fft_data_f)
-            filtered_data = np.where(fft_data2 > THRESHOLD, fft_data_f, 0)
     # Calculando as frequencias correspondentes da FFT
             freqs = np.fft.fftfreq(len(fft_data_f), 1.0 / RATE)
     # Achando o valor de maior amplitude no valor de audio aplicado a FFT
